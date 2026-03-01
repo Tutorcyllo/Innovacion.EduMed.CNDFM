@@ -141,7 +141,7 @@
     .hero-img { max-height:220px; width:auto; max-width:480px; object-fit:contain; border-radius:12px; filter:drop-shadow(0 4px 16px rgba(0,0,0,0.18)); }
     @media (max-width:768px) { .hero-layout { flex-direction:column; gap:16px; } .hero-img { max-height:160px; max-width:100%; } }
     @media (max-width:480px) { .hero-img { max-height:130px; } }
-
+    @media (max-width:600px) { .hero-edumed-logo { height:auto !important; width:100% !important; max-width:100% !important; margin-top:12px; } }
     /* ── MAIN GRID ── */
     main {
       max-width: 1280px;
@@ -773,12 +773,12 @@
   <div class="hero-inner">
     <div class="hero-layout">
       <div class="hero-text">
-        <div style="display:flex; align-items:center; gap:18px; margin-bottom:10px;">
-          <div>
+        <div style="display:flex; align-items:center; gap:18px; margin-bottom:10px; flex-wrap:wrap;">
+          <div style="flex:1; min-width:200px;">
             <div class="hero-headline">Repositorio de actividades docentes innovadoras</div>
             <div class="hero-sub">Enfoques estructurados para fomentar la creatividad y la resolución de problemas mejorando la formación de los futuros profesionales de la salud</div>
           </div>
-          <img src="https://raw.githubusercontent.com/Tutorcyllo/Innovacion.EduMed.CNDFM/main/images/logo%20edumed%20cndfm.png" alt="Logo EduMed CNDFM" style="height:180px; width:auto; max-width:100%; object-fit:contain; flex-shrink:0; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.15));">
+          <img class="hero-edumed-logo" src="https://raw.githubusercontent.com/Tutorcyllo/Innovacion.EduMed.CNDFM/main/images/logo%20edumed%20cndfm.png" alt="Logo EduMed CNDFM" style="height:180px; width:auto; max-width:100%; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.15));">
         </div>
         <div class="hero-stats">
           <span class="stat-pill" id="statActividades">— actividades</span>
