@@ -1088,10 +1088,11 @@ async function loadData() {
     var idxEval   = headers.findIndex(function(h){ return h.indexOf('evaluac') > -1; });
     var idxPres   = headers.findIndex(function(h){ return h.indexOf('presencial') > -1; });
     var idxDesarr = headers.findIndex(function(h){
-      return h.indexOf('desarrollada') > -1 || h.indexOf('universidad') > -1 ||
+      return h.indexOf('desarrollada') > -1 ||
              h.indexOf('autor') > -1 || h.indexOf('responsable') > -1 ||
              h.indexOf('grupo') > -1 || h.indexOf('diseñada') > -1 || h.indexOf('disenada') > -1;
     });
+    var idxUniv = headers.findIndex(function(h){ return h.indexOf('universidad') > -1; });
     var idxValor  = headers.findIndex(function(h){ return h.indexOf('valorac') > -1; });
     console.log('EduMed headers detectados:', {metod:idxMetod, tipo:idxTipo, nombre:idxNombre, desc:idxDesc, eval:idxEval, pres:idxPres, desarr:idxDesarr, valor:idxValor});
     console.log('EduMed headers raw:', headers);
@@ -1111,6 +1112,7 @@ async function loadData() {
         evaluacion:     idxEval   > -1 ? (r[idxEval]   || '').trim() : '',
         presencialidad: idxPres   > -1 ? (r[idxPres]   || '').trim() : '',
         desarrolladaPor: idxDesarr > -1 ? (r[idxDesarr] || '').trim() : '',
+        universidad:     idxUniv   > -1 ? (r[idxUniv]   || '').trim() : '',
         valoracion:     idxValor  > -1 ? (r[idxValor]  || '').trim().toLowerCase() : ''
       };
       console.log('Fila', i, '| metod:', metodRaw, '->', obj.metodologiaId, '| nombre:', obj.nombre, '| desarrolladaPor:', obj.desarrolladaPor);
@@ -1372,7 +1374,8 @@ function renderActividadItem(a) {
   var valorClass = (a.valoracion === 'positiva') ? ' valoracion-positiva' : (a.valoracion === 'negativa') ? ' valoracion-negativa' : '';
   var valorBadge = (a.valoracion === 'positiva') ? '<span class="actividad-valor-badge positiva">✅ Positiva</span>' : (a.valoracion === 'negativa') ? '<span class="actividad-valor-badge negativa">❌ Negativa</span>' : '';
   var meta = '';
-  if (a.desarrolladaPor) meta += '<span>🏛️ <strong>Universidad:</strong> ' + a.desarrolladaPor + '</span>';
+  if (a.universidad)     meta += '<span>🏛️ <strong>Universidad:</strong> ' + a.universidad + '</span>';
+  if (a.desarrolladaPor) meta += '<span>👤 <strong>A iniciativa de:</strong> ' + a.desarrolladaPor + '</span>';
   if (a.evaluacion)      meta += '<span>📝 <strong>Evaluación:</strong> ' + a.evaluacion + '</span>';
   if (a.presencialidad)  meta += '<span>🏫 <strong>Presencialidad:</strong> ' + a.presencialidad + '</span>';
   return '<div class="actividad-item' + valorClass + '" id="item-' + a.id + '">' +
