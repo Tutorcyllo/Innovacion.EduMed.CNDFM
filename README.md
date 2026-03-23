@@ -1,6 +1,6 @@
 # 🎓 EduMed · Metodologías Docentes Innovadoras — CNDFM
 
-> Repositorio interactivo de actividades docentes innovadoras desarrolladas en las Facultades de Medicina españolas, en el marco del **Grupo de Trabajo de Innovación y Metodologías Docentes** de la Conferencia Nacional de Decanos de Facultades de Medicina (CNDFM).
+> Repositorio interactivo de actividades docentes innovadoras desarrolladas en las Facultades de Medicina españolas, en el marco del **Grupo de Trabajo de Innovación y Metodologías Docentes** de la Conferencia Nacional de Decanos de Facultades de Medicina (CNDFM) de España.
 
 ---
 
@@ -80,9 +80,6 @@ Las actividades se cargan automáticamente desde una **hoja de Google Sheets** p
 
 ```
 https://docs.google.com/spreadsheets/d/e/[SHEET_ID]/pub?gid=0&single=true&output=csv
-```
-
-Si la carga falla (por red o CORS), la aplicación muestra un conjunto de actividades iniciales predefinidas como fallback.
 
 ### Columnas esperadas en la hoja de cálculo
 
